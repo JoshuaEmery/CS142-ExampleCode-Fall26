@@ -8,14 +8,24 @@ Code is added throughout the quarter as we cover each topic in class.
 
 ---
 
-**Class Time:** Tuesdays and Thursdays 10:00am – 12:30pm  
-**Class Location:** Building 16 Room 110
+**Class Time:**
+
+Optional if you need help setting up eclipse: Friday 9/25 12:30-2:30 pm 16-109
+
+Exam 1: Friday 10/9 12:30 - 2:30 pm 16-109
+
+Exam 2: Friday 10/30 12:30 - 2:30 pm 16-109
+
+Exam 3: Friday 11/20 12:30 - 2:30 pm 16-109
+
+Final exam to be scheduled
+**Class Location:** Building 16 Room 109
 
 ## Resources for Help
 
 ### 1. Office Hours
 
-I will be conducting office hours Friday mornings via Zoom @ 9AM 
+I will be conducting office hours Monday mornings via Zoom @ 9AM 
 
 <a href="https://rtcedu.zoom.us/my/joshuaemery?pwd=Tnl1dXo2K0FVek5LUmY0bEk3Z2k5dz09">Office Hours Link</a>
 
