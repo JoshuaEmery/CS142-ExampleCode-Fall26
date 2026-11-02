@@ -27,8 +27,6 @@ Final exam to be scheduled
 
 I will be conducting office hours Monday mornings via Zoom @ 9AM 
 
-<a href="https://rtcedu.zoom.us/my/joshuaemery?pwd=Tnl1dXo2K0FVek5LUmY0bEk3Z2k5dz09">Office Hours Link</a>
-
 ### 2. Tutoring
 
 Science, Engineering & Math Tutoring Center (SEMTC)
