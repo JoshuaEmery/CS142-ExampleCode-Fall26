@@ -3,7 +3,7 @@
 //and what the object can do (methods)
 //Once we have the blueprint we can make as many objects (instances) as we want
 //Every instance gets its own copy of the fields
-//
+
 //Think about a bank account. What do we need to know about it?
 //Who owns it, what the account number is, and how much money is in it
 //What can you do with a bank account? Deposit, withdraw, check the balance
@@ -12,7 +12,6 @@ public class BankAccount {
 	//fields - the information we want to capture about the object
 	//also called instance variables or attributes
 	//fields should be PRIVATE. Code outside of this class can not touch them directly
-	//this protects our data. Nobody can do account.balance = 1000000
 	private String owner;
 	private int accountNumber;
 	private double balance;
