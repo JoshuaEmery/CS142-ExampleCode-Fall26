@@ -1,74 +1,95 @@
-//A class is a BLUEPRINT for an object
-//It describes what information the object holds (fields)
-//and what the object can do (methods)
-//Once we have the blueprint we can make as many objects (instances) as we want
-//
-//Think about a bank account. What do we need to know about it?
-//Who owns it and how much money is in it
-//What can you do with a bank account? Deposit and withdraw
+//A class is a blueprint for creating objects
+//It describes what information that the object holds (fields)
+//What the object can do (methods)
+//Once you have the blueprint you can make as many objects as you want (instances)
+
+//What do we need to make a bank account - Owner, Balance - Fields
+
 public class BankAccount {
 
-	//fields - the information we want to capture about the object
-	//fields should be PRIVATE. Code outside of this class can not touch them directly
+	//Define the fields
+	//Variables that will store the information about the object
+	//fields should always PRIVATE
+	//private means it cannot be accessed from outside of the BankAccount class
+	//We should not let our fields be set to an invalid value
 	private String owner;
 	private double balance;
-
-	//Constructor - Special method that is called to create an instance of your class
-	//The job of the constructor is to give the fields their starting values
-	//The name must match the name of the class and there is no return type
+	
+	//Constructor - This is a special method that is called when creating
+	//an instance of your class. Its job is to give the fields their starting
+	//values - Assigns the fields
+	//The name of the constructor matches the name of the class
+	//The constructor is public so it can be accessed from outside of the class
 	public BankAccount(String owner, double balance) {
-		//this - refers to the instance of the class we are creating
-		//this.owner is the field, owner is the parameter
+		//assign the values to the fields
+		//this - refers to the current instance of the class
 		this.owner = owner;
 		this.balance = balance;
 	}
-
-	//methods - actions that a class can take
-
-	//getters/setters
-	//The getters and setters provide access to the private fields
-	//A getter lets someone READ a field
-	//A setter lets someone CHANGE a field
+	//methods - These are the actions that a class can take
+	//two basic groups - getters/setters
+	//everything else
+	//getters and setters provide access to the fields
+	//if a field has a getter it can be accessed outside of the class
+	//if a field has a setter it can be changed outside of the class
 	public String getOwner() {
-		return owner;
+		return this.owner;
 	}
-
+	//a setter is just a method that takes in a new value for a field and
+	//sets it
 	public void setOwner(String owner) {
+		//I can run tests on the string that came into this setter function
+		//BEFORE I allow it to update my field
 		this.owner = owner;
 	}
-
+	//this gives read access to balance
 	public double getBalance() {
 		return balance;
 	}
-
-	public void setBalance(double balance) {
-		this.balance = balance;
+	//this gives write access to balance
+	//this setBalance method seems kinda dangerous
+	
+//	public void setBalance(double balance) {
+//		this.balance = balance;
+//	}
+	// setter for balance is too much power to the user of my class
+	//instead we are going to provide a deposit and a withdraw method
+	
+	//lets make a deposit method. It will check that the amount is positive
+	// change the balance, return true if successful
+	public boolean deposit(double amount) {
+		if(amount < 0) {
+			return false;
+		}
+		this.balance += amount;
+		return true;
 	}
-
-	//everything else - the behavior of the object
-	//these methods change the balance of whichever account they are called on
-	public void deposit(double amount) {
-		balance = balance + amount;
+	//lets make a withdraw. Check to see if they have enough money to withdraw
+	//if not dont let them withdraw
+	public boolean withdraw(double amount) {
+		//we need to check that amount is positive
+		if(amount < 0) {
+			return false;
+		}
+		//we have to check that they have enough money
+		if(this.balance - amount < 0) {
+			return false;
+		}
+		this.balance -= amount;
+		return true;
 	}
-
-	public void withdraw(double amount) {
-		balance = balance - amount;
-	}
-
-	//toString - controls what shows up when you print the object
-	//println looks inside of the object for a method called toString()
-	//if we do not write one we get something like BankAccount@6d06d69c
+	//customize the toString method - Override
 	@Override
 	public String toString() {
-		return owner + " has $" + balance;
+		return "Account Owner: " + this.owner + ", Balance: " + this.balance;
 	}
-
-	//static - the method belongs to the CLASS, not to any one account
-	//you do not need to make an instance to call it
-	//you call it on the class name: BankAccount.accountTypes()
-	//Notice it does not use owner or balance, those belong to a specific account
+	//A static method is a method that can be called WITHOUT making an instance of
+	//the class. It is called on the CLASS ITSELF
+	//These are commonly used to give the user CATEGORIES relevant to a class
 	public static String accountTypes() {
+		//There is no THIS inside of a static method.
+		//The constructor has not run, no fields, no this
 		return "Checking, Savings";
 	}
-
+	
 }
